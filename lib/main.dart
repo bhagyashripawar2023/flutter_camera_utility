@@ -16,25 +16,31 @@ void main() {
   ErrorWidget.builder = (FlutterErrorDetails details) {
     return ErrorWidget(details.exception);
   };
-  runApp(const HomeScreen());
+  runApp(const MyApp());
 }
 
-//Flutter Camera Utility Demo app.
+/// Example app.
 class MyApp extends StatelessWidget {
-
+  /// Example app constructor.
   const MyApp({final Key? key}) : super(key: key);
-
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     // Setup image picker configs
     final configs = ImagePickerConfigs();
+    // AppBar text color
     configs.appBarTextColor = Colors.white;
     configs.appBarBackgroundColor = Colors.green;
+    // Disable select images from album
+    // configs.albumPickerModeEnabled = false;
+    // Only use front camera for capturing
+    // configs.cameraLensDirection = 0;
+    // Translate function
     configs.translateFunc = (name, value) => Intl.message(value, name: name);
     // Disable edit function, then add other edit control instead
     configs.adjustFeatureEnabled = false;
-    configs.externalImageEditors['Image Editing1'] = EditorParams(
-        title: 'Image Editing',
+    configs.externalImageEditors['external_image_editor_1'] = EditorParams(
+        title: 'external_image_editor_1',
         icon: Icons.edit_rounded,
         onEditorEvent: (
             {required BuildContext context,
@@ -52,8 +58,8 @@ class MyApp extends StatelessWidget {
                     maxWidth: maxWidth,
                     maxHeight: maxHeight,
                     configs: configs))));
- /*   configs.externalImageEditors['external_image_editor_2'] = EditorParams(
-        title: 'Image Editing',
+    configs.externalImageEditors['external_image_editor_2'] = EditorParams(
+        title: 'external_image_editor_2',
         icon: Icons.edit_attributes,
         onEditorEvent: (
             {required BuildContext context,
@@ -70,25 +76,25 @@ class MyApp extends StatelessWidget {
                     title: title,
                     maxWidth: maxWidth,
                     maxHeight: maxHeight,
-                    configs: configs))));*/
+                    configs: configs))));
 
     // Example about label detection & OCR extraction feature.
     // You can use Google ML Kit or TensorflowLite for this purpose
     configs.labelDetectFunc = (String path) async {
       return <DetectObject>[
-       /* DetectObject(label: 'dummy1', confidence: 0.75),
+        DetectObject(label: 'dummy1', confidence: 0.75),
         DetectObject(label: 'dummy2', confidence: 0.75),
-        DetectObject(label: 'dummy3', confidence: 0.75)*/
+        DetectObject(label: 'dummy3', confidence: 0.75)
       ];
     };
-    /*configs.ocrExtractFunc =
+    configs.ocrExtractFunc =
         (String path, {bool? isCloudService = false}) async {
       if (isCloudService!) {
-        return '';
+        return 'Cloud dummy ocr text';
       } else {
-        return '';
+        return 'Dummy ocr text';
       }
-    };*/
+    };
 
     // Example about custom stickers
     configs.customStickerOnly = true;
@@ -109,9 +115,6 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-
-
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
@@ -170,7 +173,7 @@ class _MyHomePageState extends State<MyHomePage> {
           }
         },
         child: const Icon(Icons.camera),
-      ),
+      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
