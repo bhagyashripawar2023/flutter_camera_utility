@@ -1,6 +1,6 @@
-/// Simple utilities to work with time
+// Simple utilities to work with time
 class TimeUtils {
-  /// Returns a nicely formatted date time string.
+  // Returns a nicely formatted date time string.
   static String getTimeString(DateTime time,
       {String s1 = "", String s2 = "_", String s3 = ""}) {
     final month = time.month.toString().padLeft(2, '0');

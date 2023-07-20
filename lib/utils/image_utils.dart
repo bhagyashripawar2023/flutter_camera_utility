@@ -8,15 +8,15 @@ import 'package:photo_manager/photo_manager.dart';
 
 import '../models/image_object.dart';
 
-/// Image utilities class.
+// Image utilities class.
 class ImageUtils {
-  /// Get image properties from image file in [path], such as width, height
+  // Get image properties from image file in [path], such as width, height
   static Future<ImageProperties> getImageProperties(String path) async {
     return FlutterNativeImage.getImageProperties(path);
   }
 
-  /// Compare & resize image file in [path].
-  /// Pass [quality], [maxWidth], [maxHeight] for output image file.
+  // Compare & resize image file in [path].
+  // Pass [quality], [maxWidth], [maxHeight] for output image file.
   static Future<File> compressResizeImage(String path,
       {int quality = 90, int maxWidth = 1080, int maxHeight = 1920}) async {
     // Get image properties
@@ -57,7 +57,7 @@ class ImageUtils {
     return File(path);
   }
 
-  /// Crop image file in [path].
+  // Crop image file in [path].
   static Future<File> cropImage(String path,
       {int originX = 0,
       int originY = 0,
@@ -91,18 +91,18 @@ class ImageUtils {
         path, x, y, (wPercent * width).toInt(), (hPercent * height).toInt());
   }
 
-  /// Get temp file created in temporary directory of device.
+  // Get temp file created in temporary directory of device.
   static Future<File> getTempFile(String filename) async {
     final dir = await getTemporaryDirectory();
     return File('$dir/$filename');
   }
 
-  /// Check [asset] & [image] file is the same asset or not.
+  // Check [asset] & [image] file is the same asset or not.
   static bool isTheSameAsset(AssetEntity asset, ImageObject image) {
     return asset.id == image.assetId;
   }
 
-  /// Get image information of image object [img].
+  // Get image information of image object [img].
   static Future<ImageObject> getImageInfo(ImageObject img) async {
     // Get image width/height
     if (img.modifiedWidth == null || img.modifiedHeight == null) {

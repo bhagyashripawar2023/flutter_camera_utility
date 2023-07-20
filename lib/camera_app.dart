@@ -19,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Select & Crop Image'),
+        title: const Text('Select & Crop Image'),
       ),
       body: Center(
         child: Column(
@@ -43,7 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   print('no permission provided');
                 }
               },
-              child: Text('Select Image'),
+              child: const Text('Select Image'),
             ),
           ],
         ),
@@ -170,5 +170,4 @@ class _HomeScreenState extends State<HomeScreen> {
       // reload();
     }
   }
-
 }

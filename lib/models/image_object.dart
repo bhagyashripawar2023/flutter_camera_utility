@@ -1,6 +1,6 @@
-/// Image object using inside this package.
+// Image object using inside this package.
 class ImageObject {
-  /// Default constructor for the image object using inside this package.
+  // Default constructor for the image object using inside this package.
   ImageObject(
       {required this.originalPath,
       required this.modifiedPath,
@@ -12,55 +12,55 @@ class ImageObject {
       this.ocrText,
       this.ocrOriginalText});
 
-  /// Original image path (input image path).
+  // Original image path (input image path).
   String originalPath;
 
-  /// Modified image path (output image path).
+  // Modified image path (output image path).
   String modifiedPath;
 
-  /// Output image width.
+  // Output image width.
   int? modifiedWidth;
 
-  /// Output image height.
+  // Output image height.
   int? modifiedHeight;
 
-  /// Asset id.
+  // Asset id.
   String? assetId;
 
-  /// Detected results
+  // Detected results
   List<DetectObject>? recognitions;
 
-  /// Label
+  // Label
   String? label;
 
-  /// OCR text
+  // OCR text
   String? ocrText;
 
-  /// OCR original text
+  // OCR original text
   String? ocrOriginalText;
 }
 
-/// Detected object
+// Detected object
 class DetectObject {
-  /// Label
+  // Label
   String label;
 
-  /// Confidence of the detection
+  // Confidence of the detection
   double? confidence;
 
-  /// X value
+  // X value
   int x;
 
-  /// Y value
+  // Y value
   int y;
 
-  /// W value
+  // W value
   int w;
 
-  /// H value
+  // H value
   int h;
 
-  /// Constructor
+  // Constructor
   DetectObject(
       {required this.label,
       this.confidence,
