@@ -1,16 +1,47 @@
 # camera_utility
 
-A new Flutter project.
+Flutter plugin for selecting **multiple images** from the Android image library, **taking new pictures with the camera**, and **edit** them before using such as rotating, adding sticker/filters.
+
+
+## Key Features
+
+- Display live camera preview in a widget
+- Adjust exposure
+- Zoom camera preview
+- Capture photo without saving into device library
+- Capture with preview size mode & full screen size mode
+- Select photos from device library by browsing photo albums
+- Preview selected images
+- Support button label & text translation
+- Easy image editing features, such as rotation, adding sticker/filters
+- Allow user add external image editors for editing selected images.
+- Support for displaying object detection & OCR result on selected image view
+- Allow setting user's own stickers
+
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+This plugin/package uses the following open source packages:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- camera
+- photo_manager
+- photo_view
+- image
+- image_cropper
+- image_editor
+- flutter_native_image
+- path_provider
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Usages
+
+Add to pubspec.yaml
+
+```
+dependencies:
+ camera_utility:
+git:
+url: https://github.com/bhagyashripawar2023/flutter_camera_utility.git
+ref: main
+```
+
